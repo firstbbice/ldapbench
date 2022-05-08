@@ -1,6 +1,6 @@
-FROM alpine:3.9
+FROM alpine:3.11
 
-ENV CLASSPATH=jldap-2009-10-07.jar:/ldapbench
+ENV CLASSPATH=/ldapbench/jldap-2009-10-07.jar:/ldapbench:.
 ENV THREADS=1
 ENV OBJECTS=100
 ENV SERVER="10.1.170.217:8389"
