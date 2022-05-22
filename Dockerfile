@@ -29,12 +29,11 @@ RUN cd /ldapbench && \
 RUN cd /ldapbench && \
     wget "$UNBOUND_URL" && \
     unzip unboundid-ldapsdk-$UNBOUND_VER.zip unboundid-ldapsdk-$UNBOUND_VER/unboundid-ldapsdk.jar && \
-    mv unboundid-ldapsdk*/*.jar . && \
-    rm -rf unboundid-ldapsdk-$UNBOUND_VER && \
-    rm unboundid-ldapsdk-$UNBOUND_VER.zip
+    mv unboundid-ldapsdk*/*.jar .
 
 RUN cd /ldapbench && \
-    wget "$UNBOUND_URL"
+    rm -rf unboundid-ldapsdk-$UNBOUND_VER && \
+    rm *.zip
 
 RUN cd /ldapbench && \
     javac LdapBench2.java
